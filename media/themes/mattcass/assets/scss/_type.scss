@@ -1,0 +1,30 @@
+
+/* 
+    Created on : Dec 4, 2015, 4:01:03 PM
+    Author     : mcassella
+*/
+
+/* Typography ------*/
+h1, h2, h3, h4, h5, h6 {font-family: 'Oswald', sans-serif;font-weight:600;line-height:1.1;letter-spacing: -0.5px;}
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small {font-weight:normal;line-height:1;color:#999999;}
+h1, h2, h3 {margin-top:20px;margin-bottom:0px;text-transform:uppercase;}
+h4, h5, h6 {margin-top:10px;margin-bottom:10px;}
+h1 {font-size:32px;margin:0;border-bottom:1px solid $line;padding:12px 0;}
+h2 {font-size:28px;
+ + p {margin-top:6px;}
+}
+h3 {font-size:22px;}
+h4 {font-size:20px;}
+h5 {font-size:18px;}
+h6 {font-size:16px;}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {color:#000;}
+a {outline:none;cursor:pointer;text-decoration:none;color:$blue;
+   &:-moz-focus-inner {border:none}
+   &:hover {text-decoration:underline;}
+}
+
+
+p {font-size:16px;line-height:2em;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
+p:empty {display:none;}
+p.credit {padding:6px 0;color:#999;font-size:12px;clear:both;width:100%;}
+

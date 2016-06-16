@@ -1,0 +1,24 @@
+/* 
+    Created on : Dec 4, 2015, 4:03:12 PM
+    Author     : mcassella
+*/
+
+@mixin transitionIt($prop, $secs) {
+    -webkit-transition: $prop $secs ease-in-out; -moz-transition: $prop $secs ease-in-out; -o-transition: $prop $secs ease-in-out; transition: $prop $secs ease-in-out;
+}
+
+$topbot: topbot; $all: all;
+@mixin border($where, $bord) {
+    border-style: solid; border-color: $bord;
+    @if $where== "topbot" { border-width: 1px 0 1px 0; }
+    @else { border-width: 1px; }
+}
+
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+

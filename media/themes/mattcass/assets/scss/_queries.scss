@@ -1,0 +1,26 @@
+/* 
+    Created on : Dec 4, 2015, 4:39:51 PM
+    Author     : mcassella
+*/
+
+@media (min-width: 700px) {
+    #masthead {
+           h1 {font-size:90px;}
+           a.h1 {font-size:40px;}
+    }
+    .blocks {
+        a {float:left;width:50%;}
+    }
+    .blog {
+        main {padding:0 11px;}
+        section {float:left;width:50%;padding:4px 2px 2px;}
+        
+    }
+    .feature {float:left;margin:0 44px 22px 0;width:40%}
+}
+
+@media (min-width: 900px) {
+    .blog {
+        section {float:left;width:33.33333%;}
+    }
+}

@@ -1,0 +1,124 @@
+/* 
+    Created on : Dec 4, 2015, 4:01:26 PM
+    Author     : mcassella
+*/
+
+.ntrig {
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 25px;
+    left: 0;
+    top: 0;
+    padding:16px;
+    z-index: 5000;
+    span {display: inline-block;
+          position: relative;
+          width: 30px;
+          height: 2px;
+          background-color: #ffffff;
+          -webkit-transition-property: background-color, -webkit-transform;
+          transition-property: background-color, -webkit-transform;
+          transition-property: background-color, transform;
+          transition-property: background-color, transform, -webkit-transform;
+          -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+          &:before {margin-top: -8px;}
+          &:after {margin-top: 8px;}
+          &:before, &:after {
+              content: '';
+              display: block;
+              width: 30px;
+              height: 2px;
+              position: absolute;
+              background: #ffffff;
+              -webkit-transition-property: margin, -webkit-transform;
+              transition-property: margin, -webkit-transform;
+              transition-property: margin, transform;
+              transition-property: margin, transform, -webkit-transform;
+              -webkit-transition-duration: 300ms;
+              transition-duration: 300ms;
+          }
+    }
+    &.active {
+        span {transform: rotate(135deg);
+              &:before {margin-top: 0;-webkit-transform: rotate(90deg);transform: rotate(90deg);}
+              &:after {margin-top: 0;-webkit-transform: rotate(180deg);transform: rotate(180deg);}
+        }
+    }
+}
+
+#navi {position:fixed;top:0;left:0;background:$gray;width:100%;height:100vh;z-index:3000;visibility: hidden;transition: all .4s cubic-bezier(.46,.03,.52,.96);text-align:center;
+       img {position:absolute;bottom:0;right:0;width:0px;opacity:0;margin:0 auto;@include transitionIt(all,0.5s);animation-delay: 40ms;}
+       ul {@include vertical-align();position:absolute;margin:0 auto;left:0;right:0;
+           li {list-style:none;transform-style: preserve-3d;@include transitionIt(all,0.5s);opacity:0;
+               a {color:$white;text-transform:uppercase;font-size:44px;font-family: 'Oswald', sans-serif;@include transitionIt(all,0.5s);
+                  &:hover {color:$orange;text-decoration:none;}
+
+               }
+               &:nth-child(1) {animation-delay: 70ms;}
+               &:nth-child(2) {animation-delay: 140ms;}
+               &:nth-child(3) {animation-delay: 210ms;}
+               &:nth-child(4) {animation-delay: 280ms;}
+           }
+       }
+       &.active {visibility:visible;
+                 img {opacity:1;width:100px;}
+                 li {-webkit-backface-visibility: hidden;-webkit-animation: push_text_right .5s ease-in-out both;animation: push_text_right .5s ease-in-out both;opacity:1;}
+       }
+}
+
+.blocks {font-family: 'Oswald', sans-serif;background:$gray;position:relative;z-index:1;background:$gray;overflow:hidden;
+         br {display:none;}
+         h2 {font-family: 'Oswald', sans-serif;letter-spacing:0;margin:0;}
+         a {display:block;background:$gray;color:$white;padding:28px 22px 22px 80px;position:relative;border:1px solid $devilgray;border-width:1px;@include transitionIt(all,0.5s);
+            i {@include vertical-align();font-size:30px;position:absolute;left:22px;}
+            em {opacity:0.6;font-style:normal;}
+            &:hover {opacity:0.8;color:$white;text-decoration:none;}
+            &.peach {background-color:$peach;border-color:darken($peach, 10% );
+                     &:hover {background-color:darken($peach, 10% )}
+            }
+            &.yellow {background-color:$yellow;border-color:darken($yellow, 10% );
+                      &:hover {background-color:darken($yellow, 10% );}
+
+            }
+            &.blue {background-color:$blue;border-color:darken($blue, 10% );
+                    &:hover {background-color:darken($blue, 10% );}
+            }
+            &.green {background-color:$green;border-color:darken($green, 10% );
+                     &:hover {background-color:darken($green, 10% );}
+            }
+            [class^="orange"] {border-color:darken($orange, 10% );
+                               &:hover {background-color:darken($orange, 10% );}  
+            }
+            &.orange {background-color:lighten($orange, 5% );border-color:darken($orange, 10% );     
+            }
+            &.orange1 {background-color:lighten($orange, 10% );border-color:darken($orange, 10% );
+                       &:hover {background-color:darken($orange, 10% );} 
+            }
+            &.orange2 {background-color:lighten($orange, 15% );border-color:darken($orange, 10% );
+                       &:hover {background-color:darken($orange, 10% );} 
+            }
+            &.orange3 {background-color:lighten($orange, 20% );border-color:darken($orange, 10% );
+                       &:hover {background-color:darken($orange, 10% );} 
+            }
+         }
+}
+
+/* Post navigation ----------- */
+main .post-navigation {height:10vh;margin:0;font-family: 'Oswald', sans-serif;max-width:900px;margin:0 auto;
+                       .nav-next {
+                           a {border-left:1px solid $white;
+                               &:after {font:normal normal normal 22px/1 FontAwesome;content:"\f105";padding-left:12px;}
+                           }
+                       }
+                       .nav-previous {
+                           a {border-right:1px solid $white;
+                               &:before {font:normal normal normal 22px/1 FontAwesome;content:"\f104";padding-right:12px;}
+                           }
+                       }
+                       a {display:block;height:100%;padding:20px;color:$gray;font-size:18px;text-transform:uppercase;background:$bggray;
+                          &:hover {text-decoration:none;opacity:0.8;}                       }
+                       }
+
+

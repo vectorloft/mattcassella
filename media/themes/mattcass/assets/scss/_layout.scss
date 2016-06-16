@@ -1,0 +1,214 @@
+/* 
+    Created on : Dec 4, 2015, 4:03:57 PM
+    Author     : mcassella
+*/
+/* Location Colors -------- */
+%btnColors {
+    &.purple {background:$purple;}
+    &.orange {background:$orange;}
+    &.green {background:$green;}
+    &.yellow {background:$yellow;}
+    &.blue {background:$blue;}
+    &.red {background:$red;}
+}
+
+/* Lets change everything ---------- */
+*, *:before, *:after { -moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}
+body {font-family: 'Lato', sans-serif;
+      &.admin-bar {}
+}
+nav {
+    ul {padding:0;margin:0;
+        li {list-style:none;}
+    }
+}
+
+img {max-width:100%;height:auto;}
+.revealOnScroll { opacity: 0; }
+
+/* Main Container -------- */
+#page {clear:both;overflow:hidden;}
+main {width:100%;margin:0 auto;text-align:left;position:relative;clear:both;background:$white;overflow:hidden;}
+.container {margin:0 auto;max-width:800px;
+            &:before, &:after {display:table;content:" ";}
+            &:after {clear:both;}
+            &:before, &:after {display:table;content:" ";}
+            &:after {clear:both;}
+}
+
+article {padding:0 12px;max-width:900px;margin:0 auto;}
+
+/* Header -----*/
+.home {
+    #masthead {height:100vh;background:$gray;
+               h1 {color:$orange;}
+    }
+    article, .container {padding:0;max-width:none;}
+    .page-content, .entry-content, .entry-summary {margin:0;}
+}
+#masthead {padding:12px;text-align:center;-webkit-transform-style: preserve-3d;-moz-transform-style: preserve-3d;transform-style: preserve-3d;height:20vh;
+           h1, .h1 {border:none;@include vertical-align();display:block;text-transform:uppercase;margin:0;padding:0;font-size:15vw;position:relative;z-index:1000;line-height:1em;font-family: 'Oswald', sans-serif;font-weight:700;letter-spacing:0;
+                    a {color:$white;}
+                    span {font-weight:300;display:block;color:$white;font-size:110%;}
+                    strong {display:block;font-weight:300;opacity:0.5;font-size:40%;color:$white;letter-spacing:8px;line-height:1.4em;}
+           }
+           a.h1 {font-size:7vw;color:$white;
+                 &:hover {text-decoration:none;opacity:0.8;}
+           }
+           &:before {background-color: $gray;bottom: 0;content: "";left: 0;opacity: 0.7;position: absolute;right: 0;top: 0;z-index: 2;}
+           .cover {background-position: center center;background-repeat: no-repeat;background-size: cover;background-image:url('http://i.jootix.com/o/Golden-Gate-Bridge-San-Francisco-golden-gate-bridge-san-francisco-.jpg');height: 100%;left: 0;position: absolute;top: 0;width: 100%;z-index: 0;overflow:hidden;}
+           .blog & .cover {background-image:url('http://www.mattcassella.com/media/uploads/2015/12/red-sky-wallpaper-16022.jpg');}
+           .single & .cover {background-image:url('http://www.mattcassella.com/media/uploads/2015/12/clouds-green-landscape-nature-hd-wallpapers-cool-background-nature-photos-fullscreen.jpg');}
+}
+
+/* Message --------*/
+#msg {text-align:center;background:$msgblue;
+      img {max-width:1438px;width:100%;}
+}
+
+/* Buttons -------*/
+.btn {display:inline-block;padding:22px 40px;border:1px solid $line;font-family: 'Oswald', sans-serif;color:$gray;@include transitionIt(all,0.5s);font-weight: 400;
+      &:hover {text-decoration:none;background:$gray;color:$white;}
+      &.sm {padding:11px 22px;}
+}
+
+//Filled button
+.fbtn {@extend .btn;background:$gray;color:$white;font-size:18px;text-align:center;display:block;cursor:pointer;
+       &:hover {background:$white;color:$gray;}
+}
+
+/* Social Icons -----*/
+.fb, .tw, .gp, .pin, .env, .lnkd {overflow:hidden;text-align:center;height:40px;width:40px;padding:10px 4px 16px;display:block;font-size:20px;color:#FFF;font-weight:normal;}
+.sBtn {color:#CCC;}
+.fb {background-color:#4463b1;}
+.tw {background-color:#00ACED;}
+.gp {background-color:#da4935;}
+.pin {background-color:#b8242a;}
+.env {background-color:#FA9C1E;}
+.lnkd {background-color:#1e88bd;}
+.simpleShare a:hover, nav #soc a:hover {color:#eee;text-decoration:none;}
+
+/* Quotes --------*/
+blockquote {font: normal 800 30px/50px 'Oswald', sans-serif;color: $blue;margin: 50px auto 10px;text-align: center;width:100%;
+            p {font: normal 800 30px/50px 'Oswald', sans-serif;}
+            em, + em {color: $gray;display: block;text-align:center;font-size: 20px;margin:0 0 50px;font-weight:300;}
+            &:before, &:after {font-size:40px;top: 6px;position: relative;padding: 0 6px;}
+            &:before {content: open-quote;}
+            &:after {content: close-quote;}
+            &.norm {margin:12px 0 0;
+               em, + em {margin-bottom:12px;}
+            }
+}
+
+/* Latest tweets widget ----*/
+.tweets {background:$twitter;color:$white;padding:12px 32px 12px 12px;width:100%;position:relative;z-index:2;
+         .container {position:relative;}
+         .tprof {@include vertical-align();position:absolute;display:inline-block;font-size:24px;padding:0;left:6px;}
+         ul {padding:0;margin:0;
+             li {list-style:none;padding:0;margin:0;}
+         }
+         p {margin:0;padding:0 0 0 40px;font-size:16px;line-height:1.3em;}
+         a {color:$white;}
+         .close {right:-16px;@include vertical-align();position:absolute;font-size:20px;line-height:0.7em;
+                 &:hover {opacity:0.7;color:$white;text-decoration:none;}
+         }
+}
+.tweet-details {font-size:13px;text-transform:uppercase;opacity:0.7;display:none;}
+.bigtweets {
+    ul {padding:0;margin:0;
+        li {list-style:none;padding:0;margin:0;padding:12px;
+            &:nth-child(odd) {background:$owhite;}
+        }
+    }
+
+}
+
+.blog {
+    #primary {background:$bggray;}
+    main {background:$bggray;padding:11px;max-width:1200px;margin:0 auto;}
+    //h1 {text-align:center;text-transform:uppercase;padding:11px 0;font-size:22px;border:none;background:$gray;color:$white;font-weight:400;letter-spacing:0;}
+    section {position:relative;text-align:center;@include transitionIt(all,0.5s);overflow:hidden;padding:0 0 11px;
+             a {color:$white;display:block;width:100%;height:100%;position:relative;overflow:hidden;line-height:0;
+                &:hover {
+                    .op {/*background:rgba(0,0,0,0.8);*/background:rgba(255,255,255,0.8);color:$black;min-height:100%;}
+                    img {transform: scale(1.1);}
+                }
+             }
+             img {width:100%;@include transitionIt(all,1s);}
+             h2 {@include vertical-align();text-transform:uppercase;position:absolute;font-size:22px;padding:20px;display:block;margin:0;width:90%;text-align:left;}
+             &:nth-child(odd) h2 {border-color:$pred;}
+    }
+}
+.op {min-height:50px;width:100%;position:absolute;bottom:0;left:0;background:rgba(0,0,0,0.7);@include transitionIt(all,0.5s);overflow:hidden;}
+
+
+/* Figure ----------*/
+figure {margin:0;line-height:0;}
+.feature {margin:0 0 22px 0;position:relative;overflow:hidden;
+          img {@include transitionIt(all,0.6s);}
+          &.alt {width:100%;}
+          a {display:block;font-family: 'Oswald', sans-serif;
+             span {@extend .op;background:rgba(0,0,0,0);height:100%;top:0;}
+             &:hover {
+                    span {background:rgba(0,0,0,0.2);}
+                    img {transform: scale(1.05);}
+                    strong {bottom:20px;font-weight: 400;}
+                }
+          
+          }
+          strong {@include transitionIt(all,1s);position:absolute;bottom:-100px;right:0;left:0;margin:0 auto;display:inline-block;color:$white;background:$red;text-align:center;width:200px;padding:22px;}
+}
+
+/* Breadcrumbs by Yoast ---------- */
+#breadcrumbs {margin:22px 0 12px;line-height:1em;
+              a, span, strong {font-size:14px;padding:0 6px;text-transform:uppercase;color:$line;
+                       &:first-child {padding-left:0;}
+              }
+}
+
+/* Social buttons -----*/
+.socBtns {overflow:hidden;
+    a {width:25%;min-height:60px;float:left;font-size:28px;
+    &:hover {opacity:0.7;}
+    }
+    br {display:none;}
+}
+
+/* Contact form -------------*/
+.wpcf7-form {max-width:580px;margin:0 auto;}
+form {
+    button, input[type="button"], input[type="reset"], input[type="submit"] {@extend .btn;font-size:18px;text-transform:uppercase;width:100%;}
+    input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"] {width:100%;padding:22px;}
+}
+
+/* Client --------- */
+.client {font-family: 'Oswald', sans-serif;padding:22px;background:$line;color:$gray;text-transform:uppercase;font-size:20px;margin-bottom:32px;
+    h2, p {display:inline;font-size:20px;}
+}
+
+/* Widgets ------- */
+.widget {
+    ul {padding:12px 0;}
+    li a {display:block;}
+}
+
+/* posts ------*/
+.entry-meta {
+    font-size:12px;text-transform:uppercase;color:$ltgray;padding:12px 0;
+    a {color:$ltgray;}
+}
+.tags {margin:22px 0 0;padding:22px 0;border:1px solid $line;border-width:1px 0;display:block;
+       a {@extend .btn;padding:12px 22px;}
+}
+
+.edit-link a {display:block;margin:12px 0;@extend .btn;text-align:center;background:$blue;color:$white;}
+
+.colpholon {background:$gray;color:$white;
+            padding:42px;text-align:center;
+            a.fa {color:$white;display:inline-block;padding:6px;font-size:22px;}
+            &.entry-footer {padding:0;}
+            h4 {color:$white;font-size:16px;}
+            p {color:$owhite;}
+}
+
+
