@@ -33,7 +33,7 @@
         <link href='https://fonts.googleapis.com/css?family=Lato:400,300|Oswald:400,300,700' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
         <link href="https://file.myfontastic.com/QgJ7JV4JLgoHRnxmn9v8be/icons.css" rel="stylesheet">
-        <link rel="stylesheet" href="/themes/mattcass/css/mc.min.css">
+        <link rel="stylesheet" href="/wp-content/themes/mattcass/css/mc.min.css">
         <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.2.js"></script>
         <?php wp_head(); ?>
         <!-- Hotjar Tracking Code for https://mattcassella.com -->
