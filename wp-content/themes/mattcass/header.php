@@ -11,7 +11,7 @@
     <head>
         <meta charset="<?php bloginfo('charset'); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="profile" href="http://gmpg.org/xfn/11">
+        <link rel="profile" href="https://gmpg.org/xfn/11">
         <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
         <link rel="apple-touch-icon" sizes="57x57" href="<?php bloginfo('template_directory'); ?>/img/icons/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="<?php bloginfo('template_directory'); ?>/img/icons/apple-icon-60x60.png">
@@ -33,10 +33,10 @@
         <link href='https://fonts.googleapis.com/css?family=Lato:400,300|Oswald:400,300,700' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
         <link href="https://file.myfontastic.com/QgJ7JV4JLgoHRnxmn9v8be/icons.css" rel="stylesheet">
-        <link rel="stylesheet" href="http://www.mattcassella.com/media/themes/mattcass/css/mc.min.css">
-        <script src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.2.js"></script>
+        <link rel="stylesheet" href="/themes/mattcass/css/mc.min.css">
+        <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.2.js"></script>
         <?php wp_head(); ?>
-        <!-- Hotjar Tracking Code for http://mattcassella.com -->
+        <!-- Hotjar Tracking Code for https://mattcassella.com -->
         <script>
             (function(h, o, t, j, a, r) {
                 h.hj = h.hj || function() {
@@ -67,12 +67,14 @@
                     <h1 itemprop="name">MATTHEW <span>CASSELLA</span> <strong>UX ARCHITECT</strong></h1>
                 <?php else : ?>
                     <a class="h1" href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?>
-                        <?php if (get_post_meta($post->ID, 'subhead', true)) { ?>
+                        <?php if (get_post_meta($post->ID, 'subhead', true)) {
+    ?>
                             <?php echo '<strong>' . stripslashes(do_shortcode(get_post_meta($post->ID, 'subhead', true))) . '</strong>'; ?>
                             <?php
-                        } else {
-                            echo '<strong>UX ARCHITECT</strong>';
-                        }
+
+} else {
+    echo '<strong>UX ARCHITECT</strong>';
+}
                         ?>
                     </a>
                 <?php endif ?>
