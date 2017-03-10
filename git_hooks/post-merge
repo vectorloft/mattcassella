@@ -1,0 +1,36 @@
+#!/bin/bash
+#
+# This script configures WordPress file permissions based on recommendations
+# from http://codex.wordpress.org/Hardening_WordPress#File_permissions
+#
+# Author: Michael Conigliaro <mike [at] conigliaro [dot] org>
+#
+
+APP_PATH=/www/mattcassella
+
+cd $APP_PATH
+ln -s $APP_PATH/git_hooks/* .git/hooks/.
+
+echo "Setting needed file permissions"
+
+WP_OWNER=www-data # <-- wordpress owner
+WP_GROUP=www-data # <-- wordpress group
+WP_ROOT=$APP_PATH # <-- wordpress root directory
+WS_GROUP=www-data # <-- webserver group
+
+# reset to safe defaults
+chown -R ${WP_OWNER}:${WP_GROUP} ${WP_ROOT}
+find ${WP_ROOT} -type d -exec chmod 775 {} \; ## so that nginx and TC can mod
+find ${WP_ROOT} -type f -exec chmod 664 {} \; ## so that nginx and TC can mod
+
+# allow wordpress to manage wp-config.php (but prevent world access)
+chgrp ${WS_GROUP} ${WP_ROOT}/wp-config.php
+chmod 660 ${WP_ROOT}/wp-config.php
+
+# allow wordpress to manage wp-content
+find ${WP_ROOT}/wp-content -exec chgrp ${WS_GROUP} {} \;
+find ${WP_ROOT}/wp-content -type d -exec chmod 775 {} \;
+find ${WP_ROOT}/wp-content -type f -exec chmod 664 {} \;
+
+# special permissions
+chmod +x ${WP_ROOT}/.git/hooks/post-merge
